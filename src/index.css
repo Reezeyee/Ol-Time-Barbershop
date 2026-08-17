@@ -1,0 +1,58 @@
+:root {
+  --walnut: #241713;
+  --parchment: #f1e6cd;
+  --red: #7e2a2f;
+  --green: #2c4433;
+  --brass: #b0863f;
+  --brass-light: #d2ad63;
+  --ink: #46342d;
+  --display: 'Bevan', Rockwell, Georgia, serif;
+  --body: 'Vollkorn', Georgia, serif;
+
+  color: var(--ink);
+  background: var(--parchment);
+  font: 18px/1.55 var(--body);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--display);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+a,
+button {
+  transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--brass-light);
+  outline-offset: 3px;
+}
