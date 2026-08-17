@@ -202,6 +202,15 @@ export default function App() {
         .menu-row .fill { flex: 1; border-bottom: 2px dotted rgba(241,230,205,0.35); transform: translateY(-5px); }
         .menu-row .price { font-family: 'Bevan', Georgia, serif; font-size: 18px; color: var(--brass-light); white-space: nowrap; }
         .menu-row .note { display: block; font-size: 13px; color: #cbb98f; margin-top: 2px; }
+        @media (max-width: 560px) {
+          .menu-board { padding: 6px 6px 18px; box-shadow: 0 0 0 4px var(--brass); }
+          .menu-board-inner { padding: 20px 16px 4px; }
+          .menu-row { flex-wrap: wrap; gap: 4px 0; padding: 14px 0; }
+          .menu-row .name { flex: 1 1 100%; min-width: 0; white-space: normal; font-size: 16px; }
+          .menu-row .fill { display: none; }
+          .menu-row .price { font-size: 16px; }
+          .menu-row .note { font-size: 12px; }
+        }
 
         /* --- Booking --- */
         .booking-shell { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
