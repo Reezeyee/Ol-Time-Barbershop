@@ -258,13 +258,14 @@ export default function App() {
         .pay-badges { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
         .pay-badge { border: 1px solid var(--brass-light); border-radius: 5px; padding: 6px 12px; font-size: 13px; font-family: 'Bevan', Georgia, serif; color: var(--brass-light); }
 
-        /* --- Feature comparison --- */
-        .feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-        .feature-card { background: var(--parchment); border: 1px solid var(--brass); border-radius: 10px; padding: 22px 24px; }
-        .feature-card .tag { display: inline-block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; background: var(--green); color: var(--cream-text); border-radius: 4px; padding: 3px 9px; margin-bottom: 10px; }
-        .feature-card h3 { margin: 0 0 8px; font-size: 17px; }
-        .feature-card p { margin: 0; font-size: 14px; color: var(--walnut-light); }
-        @media (max-width: 760px) { .feature-grid { grid-template-columns: 1fr; } }
+        /* --- Map --- */
+        .map-shell { display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px; align-items: stretch; }
+        .map-frame { border: 3px solid var(--brass); border-radius: 10px; overflow: hidden; min-height: 320px; }
+        .map-frame iframe { width: 100%; height: 100%; min-height: 320px; border: 0; display: block; }
+        .map-info { background: var(--walnut); color: var(--cream-text); border-radius: 10px; padding: 28px; display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+        .map-info h3 { margin: 0; color: var(--brass-light); font-size: 19px; }
+        .map-info p { margin: 0; font-size: 15px; color: #e6d9bc; }
+        @media (max-width: 800px) { .map-shell { grid-template-columns: 1fr; } }
 
         /* --- Contact / footer --- */
         .footer { background: var(--walnut); color: var(--cream-text); padding: 56px 24px 28px; }
@@ -294,6 +295,7 @@ export default function App() {
             <li><a href="#services" onClick={scrollTo("services")}>Services</a></li>
             <li><a href="#vip" onClick={scrollTo("vip")}>VIP</a></li>
             <li><a href="#booking" onClick={scrollTo("booking")}>Book</a></li>
+            <li><a href="#map" onClick={scrollTo("map")}>Find us</a></li>
             <li><a href="#contact" onClick={scrollTo("contact")}>Contact</a></li>
           </ul>
           <button className="nav-toggle" onClick={() => setNavOpen((o) => !o)} aria-label="Toggle menu">
@@ -305,6 +307,7 @@ export default function App() {
           <a href="#services" onClick={scrollTo("services")}>Services</a>
           <a href="#vip" onClick={scrollTo("vip")}>VIP</a>
           <a href="#booking" onClick={scrollTo("booking")}>Book</a>
+          <a href="#map" onClick={scrollTo("map")}>Find us</a>
           <a href="#contact" onClick={scrollTo("contact")}>Contact</a>
         </div>
       </nav>
@@ -521,6 +524,42 @@ export default function App() {
                   ))}
                 </tbody>
               </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* MAP */}
+      <section className="section section-alt" id="map">
+        <div className="wrap">
+          <div className="section-head">
+            <p className="kicker">Find us</p>
+            <h2>Come see us in Woodstock</h2>
+            <div className="divider" />
+          </div>
+          <div className="map-shell">
+            <div className="map-frame">
+              <iframe
+                title="Ol' Time Barber Shop location"
+                src="https://www.google.com/maps?q=Ol'+Time+Barber+Shop,6721+Bells+Ferry+Rd+D122,Woodstock,GA+30189&output=embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+            <div className="map-info">
+              <h3>6721 Bells Ferry Rd. Ste. D122</h3>
+              <p>Woodstock, GA 30189 &middot; Next to Goodwill</p>
+              <p>(770) 648-4805</p>
+              <p>Tues. &ndash; Fri. 9am&ndash;6pm &middot; Sat. 9am&ndash;4pm</p>
+              <a
+                className="btn btn-brass"
+                href="https://www.google.com/maps/place/Ol'+Time+Barber+Shop/@34.1405376,-84.5884942,17z"
+                target="_blank"
+                rel="noreferrer"
+                style={{ alignSelf: "flex-start" }}
+              >
+                Get directions
+              </a>
             </div>
           </div>
         </div>
